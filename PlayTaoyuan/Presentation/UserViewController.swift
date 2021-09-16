@@ -31,6 +31,13 @@ class UserViewController: UIViewController {
         let web = SFSafariViewController(url: URL(string: "https://www.google.com.tw")!)
         self.navigationController?.present(web, animated: true, completion: nil)
     }
+    
+    private func showWeb2() {
+        let web = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        web.url = "https://www.google.com.tw"
+        web.hidesBottomBarWhenPushed = true
+        self.navigationController?.show(web, sender: nil)
+    }
 }
 
 extension UserViewController:UITableViewDelegate, UITableViewDataSource {
@@ -54,6 +61,8 @@ extension UserViewController:UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.section == dataSource.count-1, indexPath.row == 1 {
             showWeb()
+        }else if indexPath.section == dataSource.count-1, indexPath.row == 0 {
+            showWeb2()
         }
     }
     

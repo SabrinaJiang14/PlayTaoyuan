@@ -1,21 +1,18 @@
 //
-//  SingleLayoutCell.swift
+//  ThreeRowsLayoutCell.swift
 //  PlayTaoyuan
 //
 //  Created by Eileen on 2021/9/11.
 //
 
 import UIKit
-import Combine
-import Kingfisher
 
-protocol HomeCellable {
-    func setupData(data:Info)
-}
-class SingleLayoutCell: UICollectionViewCell, HomeCellable {
+class ThreeRowsLayoutCell: UICollectionViewCell,HomeCellable {
 
     @IBOutlet weak var img: UIImageView!
+    
     @IBOutlet weak var lblTitle: UILabel!
+    
     @IBOutlet weak var lblDesc: UILabel!
     
     override func awakeFromNib() {
